@@ -356,7 +356,13 @@
             </h2>
             <!-- <h3>{{ site.name }}</h3> -->
             <p class="bio">{{ site.bio }}</p>
-
+{% if site.tags %}
+  <div class="tags">
+    {% for tag in site.tags %}
+      <a href="/tag/{{ tag.name }}">#{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
             /* ADD CUSTOM TAG NAVIGATION HERE */
             <nav class="right-nav">
                 <h2>Tags</h2>
